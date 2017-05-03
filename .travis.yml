@@ -9,7 +9,7 @@ services:
 before_script:
   - psql -c 'create database rails_messaging_test;' -U postgres
 script:
-  - bundle exec test_with_coveralls
+  - bundle exec rails test_with_coveralls
 deploy:
   provider: heroku
   api_key:
