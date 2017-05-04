@@ -8,9 +8,9 @@ Given(/^I click on "([^"]*)" link$/) do |link|
 end
 
 Then(/^I should see field "([^"]*)" of type "([^"]*)"$/) do |field, type|
-  page.should have_selector ('input[type=' + type + ']#' + field)
+  expect(page).to have_selector ('input[type=' + type + ']#' + field)
 end
 
 Then(/^I should a see "([^"]*)" button$/) do |button|
-  page.should have_selector ('input[name=' + button + ']')
+  expect(page).to have_selector ('input[name=' + button + ']')
 end
