@@ -12,3 +12,10 @@ Scenario:
   And I should see field "user_password" of type "password"
   And I should see field "user_password_confirmation" of type "password"
   And I should a see "commit" button
+  Given I fill in field "user_name" with "John"
+  And I fill in field "user_email" with "abc@de.f"
+  And I fill in field "user_password" with "12345678"
+  And I fill in field "user_password_confirmation" with "12345678"
+  And I click on "Create" button
+  Then I should expect page to have content "Welcome! You have signed up successfully."
+  And I should expect page to have content "Hello, John"
