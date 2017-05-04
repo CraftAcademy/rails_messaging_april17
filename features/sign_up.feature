@@ -4,7 +4,7 @@ Feature: Sign up Feature
   I need a form to fill my information
 
 Background:
-  Given I visit the "welcome/index" page
+  Given I visit the "Home" page
   And I click on "Sign up" link
   And I fill in field "user_name" with "John"
   And I fill in field "user_email" with "abc@de.f"
@@ -45,12 +45,7 @@ Scenario: Sad path - not possible to create a second user with the same email
   Then I should expect page to have content "Welcome! You have signed up successfully."
   And I should expect page to have content "Hello, John"
   Given I click on "Logout" link
-  And I click on "Sign up" link
-  And I fill in field "user_name" with "Peter"
-  And I fill in field "user_email" with "abc@de.f"
-  And I fill in field "user_password" with "87654321"
-  And I fill in field "user_password_confirmation" with "87654321"
-  And I click on "Create" button
+  Given I signup as "Peter" with email "abc@de.f" and password "87654321"
   Then I should expect page to have content "Email has already been taken"
 
 Scenario: Sad path - not possible to create a second user with the same name
@@ -58,10 +53,5 @@ Scenario: Sad path - not possible to create a second user with the same name
   Then I should expect page to have content "Welcome! You have signed up successfully."
   And I should expect page to have content "Hello, John"
   Given I click on "Logout" link
-  And I click on "Sign up" link
-  And I fill in field "user_name" with "John"
-  And I fill in field "user_email" with "abc@def.f"
-  And I fill in field "user_password" with "87654321"
-  And I fill in field "user_password_confirmation" with "87654321"
-  And I click on "Create" button
+  Given I signup as "John" with email "abc@def.f" and password "87654321"
   Then I should expect page to have content "Name has already been taken"
