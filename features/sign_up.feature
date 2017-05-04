@@ -39,3 +39,29 @@ Scenario: Sad path - no user name provided
   Given I fill in field "user_name" with ""
   And I click on "Create" button
   Then I should expect page to have content "Name can't be blank"
+
+Scenario: Sad path - not possible to create a second user with the same email
+  Given I click on "Create" button
+  Then I should expect page to have content "Welcome! You have signed up successfully."
+  And I should expect page to have content "Hello, John"
+  Given I click on "Logout" link
+  And I click on "Sign up" link
+  And I fill in field "user_name" with "Peter"
+  And I fill in field "user_email" with "abc@de.f"
+  And I fill in field "user_password" with "87654321"
+  And I fill in field "user_password_confirmation" with "87654321"
+  And I click on "Create" button
+  Then I should expect page to have content "Email has already been taken"
+
+Scenario: Sad path - not possible to create a second user with the same name
+  Given I click on "Create" button
+  Then I should expect page to have content "Welcome! You have signed up successfully."
+  And I should expect page to have content "Hello, John"
+  Given I click on "Logout" link
+  And I click on "Sign up" link
+  And I fill in field "user_name" with "John"
+  And I fill in field "user_email" with "abc@def.f"
+  And I fill in field "user_password" with "87654321"
+  And I fill in field "user_password_confirmation" with "87654321"
+  And I click on "Create" button
+  Then I should expect page to have content "Name has already been taken"
