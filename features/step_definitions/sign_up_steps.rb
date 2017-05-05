@@ -1,18 +1,3 @@
-def page_path(page_name)
-  case page_name
-  when 'Home' then
-    root_path
-  when 'Sign up' then
-    new_user_registration_path
-  else
-    raise "#{page_name} page path is not defined"
-  end
-end
-
-Then(/^I should a see "([^"]*)" button$/) do |button|
-  expect(page).to have_selector ('input[name=' + button + ']')
-end
-
 Given(/^I signup as "([^"]*)" with email "([^"]*)" and password "([^"]*)"$/) do |name, email, password|
   steps %{
     Given I visit the "Sign up" page
