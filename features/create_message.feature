@@ -5,10 +5,9 @@ I should be able to create a message and send a message
 
 Background:
 Given the following users exists
-  | name              | email                         | password                    |
-  | Mufasa            | mufasa@cia.gov                | 12345678                    |
-  | Gandoff           | gandoff@cia.gov               | 87654321                    |
-
+  | name              | email               | password                    |
+  | Mufasa            | mufasa@cia.gov      | 12345678                    |
+  | Gandoff           | gandoff@cia.gov     | 87654321                    |
 
 Scenario:
   Given I signup as "dania" with email "dania@nsa.gov" and password "12345678"
