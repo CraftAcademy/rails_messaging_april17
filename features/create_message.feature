@@ -4,13 +4,13 @@ to start a conversation,
 I should be able to create a message and send a message
 
 Background:
-Given the following users exists
-  | name              | email               | password                    |
-  | Mufasa            | mufasa@cia.gov      | 12345678                    |
-  | Gandoff           | gandoff@cia.gov     | 87654321                    |
-And I signup as "dania" with email "dania@nsa.gov" and password "12345678"
-And I click on "Inbox" link
-And I click on "Compose" link
+  Given the following users exists
+    | name              | email               | password      |
+    | Mufasa            | mufasa@cia.gov      | 12345678      |
+    | Gandoff           | gandoff@cia.gov     | 87654321      |
+  And I signup as "dania" with email "dania@nsa.gov" and password "12345678"
+  And I click on "Inbox" link
+  And I click on "Compose" link
 
 Scenario:
   Given I select "Mufasa" from "Recipients" list
