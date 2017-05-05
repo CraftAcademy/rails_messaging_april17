@@ -9,10 +9,6 @@ def page_path(page_name)
   end
 end
 
-Then(/^I should see field "([^"]*)" of type "([^"]*)"$/) do |field, type|
-  expect(page).to have_selector ('input[type=' + type + ']#' + field)
-end
-
 Then(/^I should a see "([^"]*)" button$/) do |button|
   expect(page).to have_selector ('input[name=' + button + ']')
 end
