@@ -29,7 +29,6 @@ Scenario: Sad path - nothing filled out
   Given I click on "Create" button
   Then I should expect page to have content "3 errors prohibited this user from being saved:"
 
-
 Scenario: Sad path - passwords not matching
   Given I fill in field "Password confirmation" with "111111111"
   And I click on "Create" button
