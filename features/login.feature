@@ -4,7 +4,7 @@ Feature: Login feature
   I need a header with links
 
 Background:
-  Given I signup as "Max" with email "abc@de.f" and password "12345678"
+  Given I signup as "GoodUser" with email "good@user.com" and password "12345678"
   And I visit the "Home" page
   And I click on "Logout" link
   And I should see a link to "Login"
@@ -12,7 +12,7 @@ Background:
   Then I click on "Login" link
 
 Scenario:
-  Given I fill in field "Email" with "abc@de.f"
+  Given I fill in field "Email" with "good@user.com"
   And I fill in field "user_password" with "12345678"
   And I click on "Log in" button
   Then I should expect page to have content "Signed in successfully."
@@ -24,13 +24,13 @@ Scenario: Sad path - nothing filled out
   Then I should expect page to have content "Invalid Email or password."
 
 Scenario: Sad path - passwords not matching with username
-  Given I fill in field "Email" with "max@max.com"
+  Given I fill in field "Email" with "bad@user.com"
   And I fill in field "Password" with "123456789"
   And I click on "Log in" button
   Then I should expect page to have content "Invalid Email or password."
 
 Scenario: Sad path - username not found
-  Given I fill in field "Email" with "maxi@max.com"
+  Given I fill in field "Email" with "bad@user.com"
   And I fill in field "Password" with "12345678"
   And I click on "Log in" button
   Then I should expect page to have content "Invalid Email or password."
