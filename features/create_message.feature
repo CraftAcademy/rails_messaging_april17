@@ -24,4 +24,3 @@ Scenario: No receipient
   And I fill in field "conversation_body" with "Agent Mufasa, please report your status report again"
   And I click on "Send Message" button
   Then I should expect page to have content "Your message was successfully sent!"
-  
