@@ -9,10 +9,6 @@ Given the following users exists
   | Mufasa            | mufasa@cia.gov                | 12345678                    |
   | Gandoff           | gandoff@cia.gov               | 87654321                    |
 
-# Background:
-#   Given I signup as "mufasa" with email "mufasa@nsa.gov" and password "12345678"
-#   And I click on "Logout" link
-#   Then I click on "Sign up" link
 
 Scenario:
   Given I signup as "dania" with email "dania@nsa.gov" and password "12345678"
